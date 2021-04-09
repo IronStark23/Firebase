@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="sesion.js"></script>
+    <title>Area de Registros</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand text-white">CRUD APP</a>
+</nav>
+<div>
+    <br/>
+    <p><button class="btn btn-outline-danger" onclick="cerrarSesion()">Cerrar Sesion</button></p>
+</div>
+<div class="container">
+    <div class="col border bg-dark">
+        <form>
+            <h3 class="text-center text-white">Ingresa tus datos aquí</h3>
+            <div class="form-group">
+                <div class="spinner-grow text-primary" role="status"></div>
+                <input type="text" id="nombre" placeholder="Introduzca su Nombre" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <div class="spinner-grow text-warning" role="status"></div>
+                <input type="text" id="apellido" placeholder="Introduzca su Apellido" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <div class="spinner-grow text-success" role="status"></div>
+                <input type="text" id="curp" placeholder="Introduzca su Curp" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <div class="spinner-grow text-danger" role="status"></div>
+                <input type="text" id="edad" placeholder="Introduzca su Edad" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <div class="spinner-grow text-info" role="status"></div>
+                <input type="text" id="domicilio" placeholder="Introduzca su Domiclio" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <div class="spinner-grow text-light" role="status"></div>
+                <input type="text" id="municipio" placeholder="Introduzca su Municipio" class="form-control"/>
+            </div>
+        </form>
+    </div>
+    <br/>
+    <button class="btn btn-primary" id="boton" onclick="agregar()">Agregar</button>
+</div>
+<br/>
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Curp</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Domicilio</th>
+            <th scope="col">Municipio</th>
+            <th scope="col">Eliminar</th>
+            <th scope="col">Editar</th>
+        </tr>
+    </thead>
+    <tbody id="tabla">
+    </tbody>
+</table>
+<!--Script para inicializar firebase-->
+<script src="crud.js"></script>
+</body>
+</html>
